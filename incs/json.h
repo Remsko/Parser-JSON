@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:55:16 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/14 17:02:05 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/14 17:25:06 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef enum e_json_value_type
     integer = 5,
     number = 6,
     string = 7,
-    len
+    e_type_length
 } t_json_value_type;
 
 typedef struct s_json_value
