@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 15:44:06 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/14 17:34:11 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/14 17:37:47 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ char *json_type_to_char(t_json_value_type type)
         [string] = "string",
     };
 
+    static_assert(type >= e_type_length);
     return (str[type]);
 }
