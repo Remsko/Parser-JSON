@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   json_print_bool.c                                  :+:      :+:    :+:   */
+/*   json_print_none.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/14 16:59:56 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/14 17:20:23 by rpinoit          ###   ########.fr       */
+/*   Created: 2018/11/14 21:13:29 by rpinoit           #+#    #+#             */
+/*   Updated: 2018/11/14 21:14:21 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "debug.h"
 
-void    json_print_bool(t_json_value *boolean)
+void    json_print_none(t_json_value *value)
 {
-    printf("(bool)%s", *(bool *)(boolean->ptr) ? "true" : "false");
+    (void)value;
+    putstr("none");
 }
