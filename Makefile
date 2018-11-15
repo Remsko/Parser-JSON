@@ -2,6 +2,10 @@ SRC_PATH = srcs
 DEBUG_PATH = debug
 
 SRC_NAME = json_parse.c \
+			json_new_value.c \
+			json_get_type.c \
+			json_new_none.c \
+			json_skip_spaces.c \
 
 DEBUG_NAME =	json_print_array.c \
 				json_print_boolean.c \
@@ -14,6 +18,7 @@ DEBUG_NAME =	json_print_array.c \
 				json_print_type.c \
 				json_print_value.c \
 				json_type_to_char.c \
+				json_get_type.c \
 
 OBJ_PATH = obj
 

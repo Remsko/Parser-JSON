@@ -6,16 +6,19 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:55:16 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 09:17:23 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/15 13:38:06 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef JSON_H
 #define JSON_H
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include <ctype.h>
+#include <string.h>
 
 typedef enum e_json_value_type
 {
@@ -36,13 +39,12 @@ typedef struct s_json_value
     t_json_value_type type;
 } t_json_value;
 
-typedef struct s_json_file
+typedef struct s_json_content
 {
     const char *src;
     uint32_t len;
-    uint32_t pos;
     uint32_t index;
-} t_json_file;
+} t_json_content;
 
 typedef struct s_json_string
 {
@@ -67,5 +69,13 @@ typedef struct s_json_object
     t_json_pair *pair;
     uint32_t len;
 } t_json_object;
+
+t_json_value *json_parse(char *src);
+t_json_value *json_new_value(t_json_content *data);
+t_json_value_type json_get_type(t_json_content *data);
+void json_skip_spaces(t_json_content *data);
+
+t_json_value *json_new_none(t_json_content *data);
+t_json_value_type json_get_type(t_json_content *data);
 
 #endif
