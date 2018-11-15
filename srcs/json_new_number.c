@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   json_new_boolean.c                                 :+:      :+:    :+:   */
+/*   json_new_number.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/15 14:12:39 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 19:11:29 by rpinoit          ###   ########.fr       */
+/*   Created: 2018/11/15 18:26:19 by rpinoit           #+#    #+#             */
+/*   Updated: 2018/11/15 18:36:48 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "json.h"
 
-t_json_value *json_new_boolean(t_json_content *data)
+static void skip_number(t_json_content *data)
+{
+    while (isdigit(data->src[data->index]))
+        ++data->index;
+    if (data->src[data->index] == '.')
+        ++data->index;
+    while (isdigit(data->src[data->index]))
+        ++data->index;
+}
+
+t_json_value *json_new_number(t_json_content *data)
 {
     t_json_value *value;
-    bool is_true;
 
-    is_true = (data->src[data->index] == 't');
     if ((value = (t_json_value *)malloc(sizeof(t_json_value))) == NULL)
         return (NULL);
-    if ((value->ptr = malloc(sizeof(bool *))) == NULL)
+    if ((value->ptr = malloc(sizeof(double *))) == NULL)
     {
         free(value);
         return (NULL);
     }
-    *(bool *)value->ptr = is_true;
-    value->type = boolean;
-    data->index += is_true ? strlen("true") : strlen("false");
+    *(double *)value->ptr = atof(&data->src[data->index]);
+    value->type = number;
+    skip_number(data);
     return (value);
 }

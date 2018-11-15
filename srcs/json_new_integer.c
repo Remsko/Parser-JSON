@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   json_new_boolean.c                                 :+:      :+:    :+:   */
+/*   json_new_integer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/15 14:12:39 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 19:11:29 by rpinoit          ###   ########.fr       */
+/*   Created: 2018/11/15 15:32:58 by rpinoit           #+#    #+#             */
+/*   Updated: 2018/11/15 18:32:04 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "json.h"
 
-t_json_value *json_new_boolean(t_json_content *data)
+static void skip_integer(t_json_content *data)
+{
+    while (isdigit(data->src[data->index]))
+        ++data->index;
+}
+
+t_json_value *json_new_integer(t_json_content *data)
 {
     t_json_value *value;
-    bool is_true;
 
-    is_true = (data->src[data->index] == 't');
     if ((value = (t_json_value *)malloc(sizeof(t_json_value))) == NULL)
         return (NULL);
-    if ((value->ptr = malloc(sizeof(bool *))) == NULL)
+    if ((value->ptr = malloc(sizeof(int *))) == NULL)
     {
         free(value);
         return (NULL);
     }
-    *(bool *)value->ptr = is_true;
-    value->type = boolean;
-    data->index += is_true ? strlen("true") : strlen("false");
+    *(int *)value->ptr = atoi(&data->src[data->index]);
+    value->type = integer;
+    skip_integer(data);
     return (value);
 }

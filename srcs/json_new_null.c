@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 13:58:34 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 14:04:48 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/15 19:11:17 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ t_json_value *json_new_null(t_json_content *data)
         return (NULL);
     value->ptr = NULL;
     value->type = null;
-    data->len += strlen("null");
+    data->index += strlen("null");
     return (value);
 }

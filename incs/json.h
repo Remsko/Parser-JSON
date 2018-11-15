@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:55:16 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 14:30:33 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/15 19:10:46 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,8 @@ t_json_value_type json_get_type(t_json_content *data);
 t_json_value *json_new_none(t_json_content *data);
 t_json_value *json_new_null(t_json_content *data);
 t_json_value *json_new_boolean(t_json_content *data);
+t_json_value *json_new_integer(t_json_content *data);
+t_json_value *json_new_number(t_json_content *data);
+t_json_value *json_new_string(t_json_content *data);
 
 #endif
