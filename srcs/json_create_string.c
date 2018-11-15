@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   json_new_string.c                                  :+:      :+:    :+:   */
+/*   json_create_string.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/15 18:57:42 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 21:07:18 by rpinoit          ###   ########.fr       */
+/*   Created: 2018/11/15 20:45:15 by rpinoit           #+#    #+#             */
+/*   Updated: 2018/11/15 21:17:35 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "json.h"
 
-t_json_value *json_new_string(t_json_content *data)
+t_json_string *json_create_string(t_json_content *data)
 {
-    t_json_value *value;
     t_json_string *str;
+    size_t len;
 
-    data->index += 1;
-    if ((value = (t_json_value *)malloc(sizeof(t_json_value))) == NULL)
-        return (NULL);
-    if ((str = json_create_string(data)) == NULL)
+    len = 0;
+    while (data->src[data->index + len] != '"')
     {
-        free(value);
+        if (data->src[data->index + len] == '\0')
+        {
+            json_throw_error(data, "quote");
+            return (NULL);
+        }
+        ++len;
+    }
+    if ((str = (t_json_string *)malloc(sizeof(t_json_string))) == NULL)
+        return (NULL);
+    str->len = len;
+    if ((str->ptr = strndup(&data->src[data->index], len)) == NULL)
+    {
+        free(str);
         return (NULL);
     }
-    value->ptr = (void *)str;
-    value->type = string;
-    data->index += str->len;
-    data->index += 1;
-    return (value);
+    return (str);
 }

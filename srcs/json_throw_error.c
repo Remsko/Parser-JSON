@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   json_print_string.c                                :+:      :+:    :+:   */
+/*   json_throw_error.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/14 16:01:58 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 20:55:55 by rpinoit          ###   ########.fr       */
+/*   Created: 2018/11/15 21:15:44 by rpinoit           #+#    #+#             */
+/*   Updated: 2018/11/15 21:16:50 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "debug.h"
+#include "json.h"
 
-void    json_print_string(t_json_value *value)
+void    json_throw_error(t_json_content *data, char *where)
 {
-    t_json_string *json_string;
-
-    json_string = (t_json_string *)value->ptr;
-    printf("(string)\"%s\" (len)%d", json_string->ptr, json_string->len);
+    printf("Parsing %s error near: '%c' at position %d\n",
+        where, data->src[data->index], data->index);
 }

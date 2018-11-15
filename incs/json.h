@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:55:16 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 19:10:46 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/15 21:18:27 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct s_json_content
 
 typedef struct s_json_string
 {
-    char *str;
+    char *ptr;
     uint32_t len;
 } t_json_string;
 
@@ -83,5 +83,9 @@ t_json_value *json_new_boolean(t_json_content *data);
 t_json_value *json_new_integer(t_json_content *data);
 t_json_value *json_new_number(t_json_content *data);
 t_json_value *json_new_string(t_json_content *data);
+
+t_json_string *json_create_string(t_json_content *data);
+
+void json_throw_error(t_json_content *data, char *where);
 
 #endif
