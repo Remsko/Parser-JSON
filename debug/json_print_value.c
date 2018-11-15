@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 21:05:30 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 09:17:32 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/15 14:07:12 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void    json_print_value(t_json_value *value)
         [string] = &json_print_string,
     };
 
+    if (value == NULL)
+        return ;
     json_print_type(value->type);
     printer[value->type](value);
 }

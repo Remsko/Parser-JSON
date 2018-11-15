@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:55:16 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 13:38:06 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/15 14:30:33 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,13 @@ typedef struct s_json_object
 
 t_json_value *json_parse(char *src);
 t_json_value *json_new_value(t_json_content *data);
-t_json_value_type json_get_type(t_json_content *data);
+
 void json_skip_spaces(t_json_content *data);
 
-t_json_value *json_new_none(t_json_content *data);
 t_json_value_type json_get_type(t_json_content *data);
+
+t_json_value *json_new_none(t_json_content *data);
+t_json_value *json_new_null(t_json_content *data);
+t_json_value *json_new_boolean(t_json_content *data);
 
 #endif

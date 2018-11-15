@@ -5,6 +5,8 @@ SRC_NAME = json_parse.c \
 			json_new_value.c \
 			json_get_type.c \
 			json_new_none.c \
+			json_new_null.c \
+			json_new_boolean.c \
 			json_skip_spaces.c \
 
 DEBUG_NAME =	json_print_array.c \
