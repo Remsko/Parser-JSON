@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 15:59:27 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/14 17:20:10 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/15 09:14:06 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,5 @@ void    json_print_type(t_json_value_type type)
     char *print;
 
     print = json_type_to_char(type);
-    putstr("(type)");
-    putstr(print);
+    printf("(type)%s", print);
 }

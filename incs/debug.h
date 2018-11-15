@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 16:06:27 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/14 21:25:18 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/15 09:06:02 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define DEBUG_H
 
 #include "json.h"
-#include <string.h>
 #include <stdio.h>
 
 char    *json_type_to_char(t_json_value_type type);
