@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 11:05:14 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 19:17:13 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/16 15:58:13 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_json_value    *json_new_value(t_json_content *data)
         [none] = &json_new_none,
         [null] = &json_new_null,
         [boolean] = &json_new_boolean,
-        [array] = &json_new_none,
+        [array] = &json_new_array,
         [object] = &json_new_none,
         [integer] = &json_new_integer,
         [number] = &json_new_number,
