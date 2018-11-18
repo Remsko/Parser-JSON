@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:55:16 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/16 16:57:51 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/18 21:25:28 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ typedef struct s_json_value
 typedef struct s_json_content
 {
     const char *src;
-    uint32_t len;
     uint32_t index;
 } t_json_content;
 
