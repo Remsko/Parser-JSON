@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 15:35:54 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/16 16:56:52 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/18 20:22:11 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,12 @@ t_json_array *json_create_array(t_json_content *data)
     len = 0;
     while (len < arr->len)
     {
+        printf("len = %zu", len);
         arr->value[len] = *json_new_value(data);
-        json_skip_comma(data);
-        json_print_value(&arr->value[len]);
+        if (len < arr->len - 1)
+            json_skip_comma(data);
+        printf("%p\n", &arr->value[len]);
+        //json_print_value(&arr->value[len]);
         ++len;
     }
     return (arr);
