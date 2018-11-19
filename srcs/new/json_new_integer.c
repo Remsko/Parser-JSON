@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 15:32:58 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 14:55:32 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 16:13:57 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ t_json_value *json_new_integer(t_json_content *data)
     }
     *(int *)value->ptr = atoi(&data->src[data->index]);
     value->type = integer;
-    skip_integer(data);
+    json_skip_integer(data);
     return (value);
 }

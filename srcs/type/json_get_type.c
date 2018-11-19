@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 11:20:45 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 14:53:04 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 16:16:07 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ t_json_value_type json_get_type(t_json_content *data)
         type = array;
     else if (data->src[data->index] == '\"')
         type = string;
-    else if (is_number(&data->src[data->index]))
+    else if (json_is_number(&data->src[data->index]))
         type = number;
-    else if (is_integer(&data->src[data->index]))
+    else if (json_is_integer(&data->src[data->index]))
         type = integer;
-    else if (is_boolean(&data->src[data->index]))
+    else if (json_is_boolean(&data->src[data->index]))
         type = boolean;
-    else if (is_null(&data->src[data->index]))
+    else if (json_is_null(&data->src[data->index]))
         type = null;
     else
         type = none;

@@ -6,13 +6,13 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 14:53:15 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 14:53:17 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 16:15:48 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "json.h"
 
-bool is_null(const char *token)
+bool json_is_null(const char *token)
 {
     return (strncmp(token, "null", strlen("null")) == 0);
 }

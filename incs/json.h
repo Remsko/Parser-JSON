@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:55:16 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 10:51:30 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 16:22:21 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,21 @@ typedef struct s_json_object
 } t_json_object;
 
 t_json_value *json_parse(char *src);
-t_json_value *json_new_value(t_json_content *data);
 
 void json_skip_spaces(t_json_content *data);
 void json_skip_comma(t_json_content *data);
 void json_skip_colon(t_json_content *data);
+void json_skip_integer(t_json_content *data);
+void json_skip_number(t_json_content *data);
 
 t_json_value_type json_get_type(t_json_content *data);
+bool json_is_boolean(const char *token);
+bool json_is_integer(const char *token);
+bool json_is_number(const char *token);
+bool json_is_null(const char *token);
 
+
+t_json_value *json_new_value(t_json_content *data);
 t_json_value *json_new_none(t_json_content *data);
 t_json_value *json_new_null(t_json_content *data);
 t_json_value *json_new_boolean(t_json_content *data);
@@ -90,6 +97,9 @@ t_json_value *json_new_object(t_json_content *data);
 t_json_string *json_create_string(t_json_content *data);
 t_json_array *json_create_array(t_json_content *data);
 t_json_object *json_create_object(t_json_content *data);
+
+uint32_t json_array_len(t_json_content *data);
+uint32_t json_object_len(t_json_content *data);
 
 void json_throw_error(t_json_content *data, char *where);
 
