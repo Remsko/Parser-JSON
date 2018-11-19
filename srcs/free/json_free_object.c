@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 17:56:08 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 18:03:12 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 18:05:08 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void    json_free_object(t_json_value *value)
     uint32_t len;
 
     if ((obj = value->ptr) != NULL)
+    {
         if (obj->pair != NULL)
         {
             len = 0;

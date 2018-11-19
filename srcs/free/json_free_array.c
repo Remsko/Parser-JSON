@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 17:48:05 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 17:56:48 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 18:08:07 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,17 @@ void json_free_array(t_json_value *value)
 
     if ((arr = value->ptr) != NULL)
     {
-        len = 0;
-        while (len < arr->len)
+        if (arr->value != NULL)
         {
-            json_free_value(arr->value[len]);
-            ++len;
+            len = 0;
+            while (len < arr->len)
+            {
+                json_free_value(arr->value[len]);
+                ++len;
+            }
+            free(arr->value);
         }
-        free(value->ptr);
+        free(arr);
     }
     free(value);
 }
