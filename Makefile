@@ -13,12 +13,15 @@ SRC_NAME = json_parse.c \
 			json_new_number.c \
 			json_new_string.c \
 			json_new_array.c \
-			\
-			json_create_string.c \
-			json_create_array.c \
+			json_new_object.c \
 			\
 			json_skip_spaces.c \
 			json_skip_comma.c \
+			json_skip_colon.c \
+			\
+			json_create_string.c \
+			json_create_array.c \
+			json_create_object.c \
 			\
 			json_throw_error.c \
 

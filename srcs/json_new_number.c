@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 18:26:19 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 18:36:48 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 09:55:55 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_json_value *json_new_number(t_json_content *data)
 
     if ((value = (t_json_value *)malloc(sizeof(t_json_value))) == NULL)
         return (NULL);
-    if ((value->ptr = malloc(sizeof(double *))) == NULL)
+    if ((value->ptr = malloc(sizeof(double))) == NULL)
     {
         free(value);
         return (NULL);

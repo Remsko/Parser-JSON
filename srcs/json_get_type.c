@@ -6,11 +6,12 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 11:20:45 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/18 21:19:50 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 10:47:15 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "json.h"
+#include "debug.h"
 
 bool is_number(const char *token)
 {
@@ -71,5 +72,6 @@ t_json_value_type json_get_type(t_json_content *data)
         type = null;
     else
         type = none;
+    json_print_type(type);
     return (type);
 }

@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   json_new_object.c                                  :+:      :+:    :+:   */
+/*   json_skip_colon.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/15 20:37:54 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 10:44:43 by rpinoit          ###   ########.fr       */
+/*   Created: 2018/11/16 16:17:06 by rpinoit           #+#    #+#             */
+/*   Updated: 2018/11/19 09:43:30 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "json.h"
 
-t_json_value    *json_new_object(t_json_content *data)
+void json_skip_comma(t_json_content *data)
 {
-    t_json_value *value;
-    t_json_object *obj;
-
-    data->index += 1;
-    if ((value = (t_json_value *)malloc(sizeof(t_json_value))) == NULL)
-        return (NULL);
-    if ((obj = json_create_object(data)) == NULL)
-    {
-        free(value);
-        return (NULL);
-    }
-    value->ptr = (void *)obj;
-    value->type = object;
-    data->index += 1;
-    return (value);
+    while (isspace(data->src[data->index]))
+        ++data->index;
+    if (data->src[data->index] == ':')
+        ++data->index;
 }
