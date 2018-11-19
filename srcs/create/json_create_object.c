@@ -6,39 +6,11 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 09:37:43 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 13:13:42 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 14:54:27 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "json.h"
-
-uint32_t json_object_len(t_json_content *data)
-{
-    int32_t     *brackets;
-    uint32_t    index;
-    uint32_t    len;
-    bool        quote;
-
-    index = data->index;
-    while (isspace((int)data->src[index]))
-        ++index;
-    if (data->src[index] == '}')
-        return (0);
-    len = 1;
-    quote = false;
-    brackets = (int32_t [2]){0, 1};
-    while (data->src[index] != '\0' && brackets[1] > 0)
-    {
-        if (data->src[index] == ',' && brackets[0] == 0 && brackets[1] == 1 && quote == 0)
-			++len;
-		brackets[0] += (data->src[index] == '[') - (data->src[index] == ']');
-		brackets[1] += (data->src[index] == '{') - (data->src[index] == '}');
-		if (data->src[index] == '\"')
-			quote ^= true;
-        ++index;
-    }
-    return (len);
-}
 
 t_json_object *json_create_object(t_json_content *data)
 {

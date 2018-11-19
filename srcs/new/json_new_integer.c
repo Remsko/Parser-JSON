@@ -6,17 +6,11 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 15:32:58 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 13:23:05 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 14:55:32 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "json.h"
-
-static void skip_integer(t_json_content *data)
-{
-    while (isdigit((int)data->src[data->index]))
-        ++data->index;
-}
 
 t_json_value *json_new_integer(t_json_content *data)
 {
