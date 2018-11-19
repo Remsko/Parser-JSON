@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 11:47:18 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 11:48:59 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 13:24:24 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void    json_skip_spaces(t_json_content *data)
 {
-    while (isspace(data->src[data->index]))
+    while (isspace((int)data->src[data->index]))
         ++data->index;
 }

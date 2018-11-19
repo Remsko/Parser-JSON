@@ -6,12 +6,11 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 11:20:45 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 10:47:15 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 13:21:24 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "json.h"
-#include "debug.h"
 
 bool is_number(const char *token)
 {
@@ -20,7 +19,7 @@ bool is_number(const char *token)
     i = 0;
     if (token[i] == '-')
         ++i;
-    while (isdigit(token[i]))
+    while (isdigit((int)token[i]))
         ++i;
     if (token[i] == '.')
         return (true);
@@ -34,16 +33,15 @@ bool is_integer(const char *token)
     i = 0;
     if (token[i] == '-')
         ++i;
-    if (isdigit(token[i]))
-        ;
-    else
-        return (false);
-    return (true);
+    if (isdigit((int)token[i]))
+        return (true);
+    return (false);
 }
 
 bool is_boolean(const char *token)
 {
-    return (strncmp(token, "true", strlen("true")) == 0 || strncmp(token, "false", strlen("false")) == 0);
+    return (strncmp(token, "true", strlen("true")) == 0
+        || strncmp(token, "false", strlen("false")) == 0);
 }
 
 bool is_null(const char *token)
@@ -72,6 +70,5 @@ t_json_value_type json_get_type(t_json_content *data)
         type = null;
     else
         type = none;
-    json_print_type(type);
     return (type);
 }

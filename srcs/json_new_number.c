@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 18:26:19 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 09:55:55 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 13:25:38 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 static void skip_number(t_json_content *data)
 {
-    while (isdigit(data->src[data->index]))
-        ++data->index;
+    json_skip_spaces(data);
     if (data->src[data->index] == '.')
         ++data->index;
-    while (isdigit(data->src[data->index]))
-        ++data->index;
+    json_skip_spaces(data);
 }
 
 t_json_value *json_new_number(t_json_content *data)

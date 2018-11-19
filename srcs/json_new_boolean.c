@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 14:12:39 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 19:11:29 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 13:27:28 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ t_json_value *json_new_boolean(t_json_content *data)
     t_json_value *value;
     bool is_true;
 
-    is_true = (data->src[data->index] == 't');
     if ((value = (t_json_value *)malloc(sizeof(t_json_value))) == NULL)
         return (NULL);
-    if ((value->ptr = malloc(sizeof(bool *))) == NULL)
+    if ((value->ptr = malloc(sizeof(bool))) == NULL)
     {
         free(value);
         return (NULL);
     }
+    is_true = (data->src[data->index] == 't');
     *(bool *)value->ptr = is_true;
     value->type = boolean;
     data->index += is_true ? strlen("true") : strlen("false");

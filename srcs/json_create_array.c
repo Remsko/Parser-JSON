@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 15:35:54 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 09:36:39 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 13:26:36 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ t_json_array *json_create_array(t_json_content *data)
     t_json_array *arr;
     size_t len;
 
+    data->index += 1;
     if ((arr = (t_json_array *)malloc(sizeof(t_json_array))) == NULL)
         return (NULL);
     arr->len = json_array_len(data);
@@ -61,5 +62,7 @@ t_json_array *json_create_array(t_json_content *data)
             json_skip_comma(data);
         ++len;
     }
+    json_skip_spaces(data);
+    data->index += 1;
     return (arr);
 }

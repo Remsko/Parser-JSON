@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 20:45:15 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 21:17:35 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 13:18:14 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_json_string *json_create_string(t_json_content *data)
     size_t len;
 
     len = 0;
+    data->index += 1;
     while (data->src[data->index + len] != '"')
     {
         if (data->src[data->index + len] == '\0')
@@ -35,5 +36,6 @@ t_json_string *json_create_string(t_json_content *data)
         free(str);
         return (NULL);
     }
+    data->index += 1;
     return (str);
 }

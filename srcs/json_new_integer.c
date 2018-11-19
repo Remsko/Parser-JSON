@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 15:32:58 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 09:55:51 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/19 13:23:05 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void skip_integer(t_json_content *data)
 {
-    while (isdigit(data->src[data->index]))
+    while (isdigit((int)data->src[data->index]))
         ++data->index;
 }
 
