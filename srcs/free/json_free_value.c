@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   json_new_value.c                                   :+:      :+:    :+:   */
+/*   json_free_value.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/15 11:05:14 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 17:15:06 by rpinoit          ###   ########.fr       */
+/*   Created: 2018/11/19 17:36:24 by rpinoit           #+#    #+#             */
+/*   Updated: 2018/11/19 17:38:28 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "json.h"
 
-t_json_value    *json_new_value(t_json_content *data)
+void    json_free_value(t_json_value *value)
 {
-    static t_json_value *(*new_value[t_type_length])(t_json_content *) =
+    static t_json_value *(*free_value[t_type_length])(t_json_content *) =
     {
         [none] = &json_new_none,
         [null] = &json_new_null,
@@ -26,7 +26,9 @@ t_json_value    *json_new_value(t_json_content *data)
         [string] = &json_new_string,
     };
     t_json_value_type type;
-    
-    type = json_get_type(data);
-    return (new_value[type](data));
+
+    if (value == NULL)
+        return ;
+    type = value->type;
+    return (free_value[type](value));
 }
