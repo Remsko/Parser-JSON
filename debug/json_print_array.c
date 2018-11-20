@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 20:59:18 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 12:53:02 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/20 14:11:05 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void    json_print_array(t_json_value *value)
     printf("(array)[\n");
     while (index < array->len)
     {
-        json_print_value(&array->value[index]);
+        json_print_value(array->value[index]);
         if (index < array->len - 1)
             printf(", ");
         ++index;

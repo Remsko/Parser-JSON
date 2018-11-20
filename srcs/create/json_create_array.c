@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 15:35:54 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 14:53:57 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/20 14:10:49 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_json_array *json_create_array(t_json_content *data)
     if ((arr = (t_json_array *)malloc(sizeof(t_json_array))) == NULL)
         return (NULL);
     arr->len = json_array_len(data);
-    if ((arr->value = (t_json_value *)malloc(sizeof(t_json_value) * arr->len)) == NULL)
+    if ((arr->value = (t_json_value **)malloc(sizeof(t_json_value *) * arr->len)) == NULL)
     {
         free(arr);
         return (NULL);
@@ -29,7 +29,7 @@ t_json_array *json_create_array(t_json_content *data)
     len = 0;
     while (len < arr->len)
     {
-        arr->value[len] = *json_new_value(data);
+        arr->value[len] = json_new_value(data);
         if (len < arr->len - 1)
             json_skip_comma(data);
         ++len;
