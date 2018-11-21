@@ -27,6 +27,15 @@ SRC_NAME =		json_parse.c \
 				type/json_is_integer.c \
 				type/json_is_null.c \
 				type/json_is_number.c \
+				free/json_free_array.c \
+				free/json_free_boolean.c \
+				free/json_free_number.c \
+				free/json_free_integer.c \
+				free/json_free_none.c \
+				free/json_free_null.c \
+				free/json_free_object.c \
+				free/json_free_string.c \
+				free/json_free_value.c \
 
 DEBUG_NAME =	json_print_array.c \
 				json_print_boolean.c \
@@ -73,6 +82,7 @@ dir:
 	@mkdir -p $(OBJ_PATH)/new
 	@mkdir -p $(OBJ_PATH)/skip
 	@mkdir -p $(OBJ_PATH)/type
+	@mkdir -p $(OBJ_PATH)/free
 
 $(NAME): $(OBJ) $(LDLIBS)
 	ar -rc $(NAME) $(OBJ) $(LDLIBS)

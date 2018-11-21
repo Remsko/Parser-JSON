@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 15:42:41 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/18 21:21:40 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/21 11:44:17 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ t_json_value *json_parse(char *src)
     data->src = (const char *)src;
     value = json_new_value(data);
     free(data);
+    json_free_value(value);
     return (value);
 }

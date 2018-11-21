@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:55:16 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/20 14:09:45 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/21 11:42:10 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,15 @@ uint32_t json_array_len(t_json_content *data);
 uint32_t json_object_len(t_json_content *data);
 
 void json_throw_error(t_json_content *data, char *where);
+
+void json_free_value(t_json_value *value);
+void json_free_none(t_json_value *value);
+void json_free_null(t_json_value *value);
+void json_free_boolean(t_json_value *value);
+void json_free_integer(t_json_value *value);
+void json_free_number(t_json_value *value);
+void json_free_string(t_json_value *value);
+void json_free_array(t_json_value *value);
+void json_free_object(t_json_value *value);
 
 #endif

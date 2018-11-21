@@ -59,8 +59,9 @@ int	main(int ac, char **av)
 	if ((fd = open(av[1], O_RDONLY)) == -1)
 		return (-1);
 	full_file = read_file(fd);
-	json_print_value(json_parse(full_file));
-	printf("\n\n%s\n", full_file);
+	json_parse(full_file);
+	//printf("\n\n%s\n", full_file);
+	free(full_file);
 	if (close(fd) == -1)
 		return (-1);
 	return (0);
