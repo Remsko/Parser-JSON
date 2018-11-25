@@ -6,11 +6,12 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 14:56:04 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 16:15:22 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/25 14:58:12 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "json.h"
+#include "json_types.h"
+#include "json_parser.h"
 
 void json_skip_number(t_json_content *data)
 {

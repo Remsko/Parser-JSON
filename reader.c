@@ -4,8 +4,9 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#include "json.h"
-#include "debug.h"
+#include "json_types.h"
+#include "json_parser.h"
+#include "json_debug.h"
 
 # define BUFF_SIZE 4096
 
@@ -59,8 +60,8 @@ int	main(int ac, char **av)
 	if ((fd = open(av[1], O_RDONLY)) == -1)
 		return (-1);
 	full_file = read_file(fd);
-	json_parse(full_file);
 	//printf("\n\n%s\n", full_file);
+	json_print_value(json_parse(full_file));
 	free(full_file);
 	if (close(fd) == -1)
 		return (-1);

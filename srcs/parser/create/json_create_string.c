@@ -6,11 +6,14 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 20:45:15 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 13:18:14 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/25 14:50:28 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "json.h"
+#include "json_types.h"
+#include "json_parser.h"
+#include <stdlib.h>
+#include    <string.h>
 
 t_json_string *json_create_string(t_json_content *data)
 {

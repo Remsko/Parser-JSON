@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   json_debug.h                                       :+:      :+:    :+:   */
+/*   json_json_debug.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,6 +14,8 @@
 # define DEBUG_H
 
 #include "json_types.h"
+#include <stdbool.h>
+#include <stdio.h>
 
 /*
 ** Debug feature

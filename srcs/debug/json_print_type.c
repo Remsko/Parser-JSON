@@ -6,11 +6,11 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 15:59:27 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/15 09:14:06 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/25 14:42:16 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "debug.h"
+#include "json_debug.h"
 
 void    json_print_type(t_json_value_type type)
 {

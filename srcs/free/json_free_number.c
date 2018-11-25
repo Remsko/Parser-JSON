@@ -6,11 +6,12 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 17:43:09 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/21 11:45:14 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/25 14:46:46 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "json.h"
+#include "json_types.h"
+#include <stdlib.h>
 
 void json_free_number(t_json_value *value)
 {

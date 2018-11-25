@@ -6,11 +6,14 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 14:12:39 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 13:27:28 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/25 14:53:38 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "json.h"
+#include "json_types.h"
+#include <stdlib.h>
+#include <stdbool.h>
+#include    <string.h>
 
 t_json_value *json_new_boolean(t_json_content *data)
 {

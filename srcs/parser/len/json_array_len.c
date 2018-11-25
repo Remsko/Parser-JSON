@@ -6,11 +6,13 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 14:54:02 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 14:54:10 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/25 14:51:58 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "json.h"
+#include "json_types.h"
+#include <stdbool.h>
+#include    <ctype.h>
 
 uint32_t json_array_len(t_json_content *data)
 {

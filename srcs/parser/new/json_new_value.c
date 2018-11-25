@@ -6,11 +6,12 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 11:05:14 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 17:15:06 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/25 14:57:10 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "json.h"
+#include "json_types.h"
+#include "json_parser.h"
 
 t_json_value    *json_new_value(t_json_content *data)
 {

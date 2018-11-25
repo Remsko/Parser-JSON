@@ -6,11 +6,13 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 15:42:41 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/21 15:27:24 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/25 14:48:20 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "json.h"
+#include "json_types.h"
+#include "json_parser.h"
+#include <stdlib.h>
 
 t_json_value *json_parse(char *src)
 {

@@ -6,11 +6,12 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 11:47:18 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/19 13:24:24 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/25 14:58:29 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "json.h"
+#include "json_types.h"
+#include    <ctype.h>
 
 void    json_skip_spaces(t_json_content *data)
 {
