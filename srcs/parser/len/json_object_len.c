@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 14:54:33 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/25 14:52:18 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/26 15:37:03 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ uint32_t json_object_len(t_json_content *data)
 			++len;
 		brackets[0] += (data->src[index] == '[') - (data->src[index] == ']');
 		brackets[1] += (data->src[index] == '{') - (data->src[index] == '}');
-		if (data->src[index] == '\"')
+		if (data->src[index] == '\"' && data->src[index - 1] != '\\')
 			quote ^= true;
         ++index;
     }

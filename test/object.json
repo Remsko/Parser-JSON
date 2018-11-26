@@ -1,4 +1,5 @@
 {
     "string" : null,
-    "string1" : "string2"
+    "string1" : "string2 \"poulet\"",
+	"poulet": true
 }

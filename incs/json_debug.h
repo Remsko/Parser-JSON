@@ -14,7 +14,6 @@
 # define DEBUG_H
 
 #include "json_types.h"
-#include <stdbool.h>
 #include <stdio.h>
 
 /*

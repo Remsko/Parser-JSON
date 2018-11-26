@@ -6,7 +6,7 @@
 /*   By: rpinoit <rpinoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 20:45:15 by rpinoit           #+#    #+#             */
-/*   Updated: 2018/11/25 14:50:28 by rpinoit          ###   ########.fr       */
+/*   Updated: 2018/11/26 15:47:23 by rpinoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ t_json_string *json_create_string(t_json_content *data)
 
     len = 0;
     data->index += 1;
-    while (data->src[data->index + len] != '"')
+    while (1)
     {
+        if (data->src[data->index + len] == '\"' 
+				&& data->src[data->index + len - 1] != '\\')
+			break ;
         if (data->src[data->index + len] == '\0')
         {
             json_throw_error(data, "quote");
