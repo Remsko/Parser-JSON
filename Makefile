@@ -78,6 +78,9 @@ SRC_NAME += json_is_integer.c
 SRC_NAME += json_is_null.c
 SRC_NAME += json_is_number.c
 
+SRC_SUB += getter
+SRC_NAME += getter_by_key.c
+
 vpath %.c $(addprefix $(SRC_PATH)/,$(SRC_SUB))
 
 OBJ_PATH = obj
