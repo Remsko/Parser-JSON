@@ -1,5 +1,7 @@
 {
     "string" : null,
     "string1" : "string2 \"poulet\"",
-	"poulet": true
+    "poulet": true,
+    "nique": -128.0,
+    "nique2": 145
 }
